@@ -95,7 +95,7 @@ struct ContentView: View {
                         .font(.headline)
                         .foregroundColor(mainColor)) {
                 if splitEvenly {
-                    Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(totalPerPerson, format: .currency(code: "NOK"))
                         .font(.title2)
                         .foregroundColor(secondaryColor)
                 } else {
@@ -110,7 +110,7 @@ struct ContentView: View {
             Section(header: Text("Grand total")
                         .font(.headline)
                         .foregroundColor(mainColor)) {
-                Text(grandTotal, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                Text(grandTotal, format: .currency(code: "NOK"))
                     .font(.title2)
                     .foregroundColor(secondaryColor)
             }
