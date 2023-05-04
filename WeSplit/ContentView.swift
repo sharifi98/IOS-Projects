@@ -7,6 +7,7 @@ struct ContentView: View {
     @FocusState private var amountIsFocused: Bool
     @State private var splitEvenly = true
     @State private var unevenSplits: [Int] = Array(repeating: 1, count: 2)
+    @State private var zeroTip = false
 
     let tipPercentages = [10, 15, 20, 25, 0]
 
@@ -84,8 +85,11 @@ struct ContentView: View {
                                 .font(.headline)
                                 .foregroundColor(mainColor)) {
                         Picker("Tip percentage", selection: $tipPercentage) {
+                            
                             ForEach(0..<101) {
                                 Text($0, format: .percent)
+                                    .foregroundColor(($0 == 0) ? .red : .black)
+                                    
                             }
 
                         }
