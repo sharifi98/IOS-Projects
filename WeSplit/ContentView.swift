@@ -89,6 +89,7 @@ struct ContentView: View {
                             ForEach(0..<101) {
                                 Text($0, format: .percent)
                                     .foregroundColor(($0 == 0) ? .red : .black)
+                                // yes
                                     
                             }
 
